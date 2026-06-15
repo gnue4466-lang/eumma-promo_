@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<!-- saved from url=(0110)file:///C:/Users/gnue/Downloads/%EC%9D%B4%EC%9D%8C%EB%A7%90%EA%B5%90%EC%8B%A4_%ED%99%8D%EB%B3%B4%EB%AC%B8.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="./이음말교실_홍보문_files/pretendard.css" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --sky: #F0F7F4;
+    --green-main: #2E8B57;
+    --green-deep: #1A5C38;
+    --green-light: #52B788;
+    --yellow: #FFD700;
+    --orange: #FF8C42;
+    --white: #FFFFFF;
+    --text-dark: #1A2A1E;
+    --teal: #40BFA0;
+    --viet-red: #DA251D;
+    --russ-blue: #0039A6;
+    --russ-red: #D52B1E;
+    --purple: #6C5CE7;
+    --pink: #E84393;
+  }
+  html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  body {
+    font-family: 'Pretendard', 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+    background: var(--sky);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    letter-spacing: -0.025em;
+    word-break: keep-all;
+    font-weight: 500;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(160deg, #1A5C38 0%, #2E8B57 45%, #52B788 100%);
+    padding: 60px 40px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,215,0,0.10);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 250px; height: 250px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+  }
+  .star {
+    position: absolute;
+    width: 6px; height: 6px;
+    background: rgba(255,215,0,0.65);
+    clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+    animation: twinkle 3s ease-in-out infinite;
+  }
+  @keyframes twinkle { 0%,100%{opacity:0.4;transform:scale(1)} 50%{opacity:1;transform:scale(1.3)} }
+  .lang-float {
+    position: absolute;
+    font-size: 22px;
+    opacity: 0.22;
+    animation: floatLang 6s ease-in-out infinite;
+  }
+  @keyframes floatLang { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+
+  .badge-year {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--green-deep);
+    font-weight: 900;
+    font-size: 15px;
+    padding: 6px 22px;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  .hero-subtitle {
+    color: rgba(255,255,255,0.88);
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .hero-title {
+    font-weight: 900;
+    font-size: clamp(42px, 10vw, 80px);
+    color: var(--white);
+    line-height: 1.12;
+    margin-bottom: 10px;
+    letter-spacing: -0.04em;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  .hero-title .accent { color: var(--yellow); }
+  .hero-title .accent-red { color: #FFAAAA; }
+  .hero-en {
+    font-size: 16px;
+    color: rgba(255,255,255,0.72);
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-bottom: 28px;
+    text-align: center;
+  }
+  .hero-desc {
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.28);
+    border-radius: 16px;
+    padding: 20px 32px;
+    color: rgba(255,255,255,0.95);
+    font-size: 16px;
+    line-height: 1.95;
+    font-weight: 500;
+    max-width: 680px;
+    margin: 0 auto 32px;
+    text-align: center;
+  }
+  .hero-desc strong { color: var(--yellow); }
+
+  .stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+  }
+  .stat-pill {
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.36);
+    border-radius: 40px;
+    padding: 10px 20px;
+    text-align: center;
+    color: white;
+  }
+  .stat-pill .num { font-size: 21px; font-weight: 900; color: var(--yellow); display: block; }
+  .stat-pill .lbl { font-size: 12px; opacity: 0.85; }
+
+  .wave { height: 60px; background: var(--sky); position: relative; overflow: hidden; margin-top: -2px; }
+  .wave svg { position: absolute; bottom: 0; width: 100%; }
+
+  /* ===== SECTIONS ===== */
+  .section { padding: 50px 40px; max-width: 900px; margin: 0 auto; }
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green-main);
+    color: white;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 6px 16px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+  .section-label .num {
+    background: white;
+    color: var(--green-main);
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 900;
+  }
+  .section-title {
+    font-weight: 900;
+    font-size: 28px;
+    color: var(--green-deep);
+    margin-bottom: 24px;
+    letter-spacing: -0.04em;
+    line-height: 1.2;
+  }
+
+  /* ===== PURPOSE BOX ===== */
+  .purpose-box {
+    background: white;
+    border-radius: 22px;
+    padding: 32px 36px;
+    box-shadow: 0 8px 32px rgba(46,139,87,0.10);
+    border: 1px solid #C8E8D5;
+    text-align: center;
+  }
+  .purpose-quote {
+    font-size: 28px;
+    line-height: 1.5;
+    font-weight: 900;
+    color: var(--green-deep);
+    margin-bottom: 16px;
+    letter-spacing: -0.04em;
+  }
+  .purpose-quote em { color: var(--green-main); font-style: normal; }
+  .purpose-divider {
+    width: 48px; height: 3px;
+    background: var(--green-light);
+    border-radius: 2px;
+    margin: 0 auto 20px;
+  }
+  .purpose-text {
+    font-size: 16px;
+    line-height: 2.0;
+    font-weight: 500;
+    color: #3E4A42;
+    text-align: center;
+  }
+  .purpose-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+    justify-content: center;
+  }
+  .keyword-pill {
+    background: #EEF7F1;
+    color: var(--green-deep);
+    border: 1px solid #B0DAC0;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 750;
+  }
+
+  /* ===== CARDS ===== */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .info-card {
+    background: white;
+    border-radius: 16px;
+    padding: 26px 22px;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .info-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; }
+  .info-card.green::before { background: var(--green-main); }
+  .info-card.yellow::before { background: var(--yellow); }
+  .info-card.teal::before { background: var(--teal); }
+  .info-card.orange::before { background: var(--orange); }
+  .info-card.red::before { background: var(--viet-red); }
+
+  .info-card.russ-blue::before { background: #0039A6; }
+
+  .info-card:hover { border-color: var(--green-light); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(46,139,87,0.15); }
+  .card-icon { font-size: 32px; margin-bottom: 12px; display: block; text-align: center; }
+  .card-title { font-size: 16px; font-weight: 800; color: var(--green-deep); margin-bottom: 10px; line-height: 1.4; text-align: center; }
+  .card-body { font-size: 14px; color: #555; line-height: 1.85; font-weight: 500; text-align: center; }
+  .card-body strong { color: var(--green-main); }
+
+  /* ===== HIGHLIGHT BOX ===== */
+  .highlight-box {
+    background: linear-gradient(135deg, #EEF7F1, #D8F0E4);
+    border: 2px solid var(--green-light);
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin: 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .highlight-box .icon { font-size: 20px; flex-shrink: 0; }
+  .highlight-box .content { font-size: 15px; color: #444; line-height: 1.75; font-weight: 500; }
+  .highlight-box .content strong { color: var(--green-deep); }
+
+  /* ===== NOTICE BOX ===== */
+  .notice-box {
+    background: linear-gradient(135deg, #1A5C38, #2E8B57);
+    color: white;
+    border-radius: 22px;
+    padding: 36px 32px;
+    text-align: center;
+    box-shadow: 0 10px 36px rgba(26,92,56,0.22);
+  }
+  .notice-box h3 {
+    font-weight: 900;
+    font-size: 24px;
+    color: var(--yellow);
+    margin-bottom: 12px;
+    letter-spacing: -0.04em;
+    line-height: 1.4;
+  }
+  .notice-box p {
+    font-size: 15px;
+    line-height: 2.0;
+    font-weight: 500;
+    opacity: 0.95;
+    text-align: center;
+  }
+  .notice-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .notice-list span {
+    background: rgba(255,255,255,0.16);
+    border: 1px solid rgba(255,255,255,0.28);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 750;
+  }
+
+  /* ===== ADDED BAND ===== */
+  .added-band {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.32);
+    border-radius: 16px;
+    padding: 16px 24px;
+    max-width: 720px;
+    margin: 0 auto 28px;
+    color: rgba(255,255,255,0.95);
+    font-size: 15px;
+    line-height: 1.9;
+    font-weight: 600;
+    text-align: center;
+  }
+  .added-band strong { color: var(--yellow); }
+
+  /* ===== APPLY SECTION ===== */
+  .apply-section {
+    background: white;
+    border-radius: 24px;
+    padding: 40px 36px;
+    text-align: center;
+    box-shadow: 0 8px 40px rgba(46,139,87,0.12);
+    position: relative;
+    overflow: hidden;
+  }
+  .apply-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--green-main), var(--teal), var(--yellow));
+  }
+  .apply-title {
+    font-weight: 900;
+    font-size: 24px;
+    color: var(--green-deep);
+    margin-bottom: 10px;
+    letter-spacing: -0.04em;
+  }
+  .apply-desc {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 28px;
+    line-height: 1.9;
+    font-weight: 500;
+    text-align: center;
+  }
+  .apply-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
+  }
+  .apply-step {
+    background: #EEF7F1;
+    color: var(--green-deep);
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 800;
+    text-align: center;
+  }
+  .apply-step-arrow { font-size: 18px; color: var(--green-light); }
+
+  /* 밴드 섹션 */
+  .band-section {
+    background: #F2FBF6;
+    border-radius: 18px;
+    padding: 28px 32px;
+    text-align: center;
+    border: 2px solid #B0E0C8;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .band-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #03C75A, #40BFA0);
+  }
+  .band-logo {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #03C75A, #02A045);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 16px rgba(3,199,90,0.28);
+  }
+  .band-title { font-size: 18px; font-weight: 850; color: var(--green-deep); margin-bottom: 8px; text-align: center; }
+  .band-desc { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 18px; text-align: center; }
+  .band-url {
+    display: inline-block;
+    background: white;
+    border: 1.5px dashed var(--green-light);
+    border-radius: 10px;
+    padding: 9px 20px;
+    font-size: 14px;
+    color: var(--green-main);
+    font-weight: 700;
+    margin-bottom: 18px;
+    word-break: break-all;
+    text-align: center;
+  }
+  .btn-group { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 22px; border-radius: 12px;
+    font-size: 15px; font-weight: 800; cursor: pointer; border: none;
+    text-decoration: none; transition: all 0.25s;
+    font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  }
+  .btn-primary { background: var(--green-main); color: white; box-shadow: 0 4px 16px rgba(46,139,87,0.3); }
+  .btn-primary:hover { background: var(--green-deep); transform: translateY(-2px); }
+  .btn-secondary { background: var(--yellow); color: var(--green-deep); }
+  .btn-secondary:hover { background: #FFCA00; transform: translateY(-2px); }
+  .btn-band {
+    background: linear-gradient(135deg, #03C75A, #02A045);
+    color: white;
+    box-shadow: 0 4px 16px rgba(3,199,90,0.3);
+    font-size: 15px;
+    padding: 14px 28px;
+    border-radius: 14px;
+  }
+  .btn-band:hover { opacity: 0.9; transform: translateY(-2px); }
+
+  /* ===== CONTACT ===== */
+  .contact-row {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 18px; margin-top: 20px; padding-top: 20px;
+    border-top: 1px dashed #DDD;
+  }
+  .contact-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #555; font-weight: 600; }
+  .contact-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: #EEF7F1; display: flex; align-items: center; justify-content: center; font-size: 16px;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--green-deep);
+    color: rgba(255,255,255,0.72);
+    font-size: 13px;
+    line-height: 2.0;
+  }
+  .footer strong { color: white; }
+
+  /* ===== EDIT BAR ===== */
+  .inline-editable { cursor: text; transition: outline-color 0.2s, background-color 0.2s; }
+  .inline-editable:hover { outline: 2px dashed rgba(255,140,66,0.45); outline-offset: 3px; background-color: rgba(255,245,210,0.22); }
+  .inline-editable:focus { outline: 2px solid #FF8C42; outline-offset: 3px; background-color: rgba(255,255,255,0.28); box-shadow: 0 0 0 4px rgba(255,140,66,0.12); }
+  .edit-helper-bar {
+    position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%);
+    display: flex; gap: 8px; align-items: center;
+    background: rgba(26,92,56,0.96); color: #fff; border-radius: 999px;
+    padding: 10px 12px 10px 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.22); z-index: 1000;
+    font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  }
+  .edit-helper-bar span { font-size: 13px; font-weight: 700; white-space: nowrap; }
+  .edit-helper-bar button { border: none; border-radius: 999px; padding: 9px 13px; font-size: 13px; font-weight: 800; cursor: pointer; font-family: 'Pretendard', sans-serif; }
+  .edit-helper-save { background: #FFD700; color: #1A5C38; }
+  .edit-helper-toggle { background: rgba(255,255,255,0.18); color: #fff; border: 1px solid rgba(255,255,255,0.3) !important; }
+  .edit-mode-off .inline-editable { cursor: default; }
+  .edit-mode-off .inline-editable:hover, .edit-mode-off .inline-editable:focus { outline: none; background: inherit; box-shadow: none; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 48px 20px 64px; }
+    .section { padding: 40px 20px; }
+    .section-title { font-size: 24px; } } }
+    .apply-section { padding: 32px 20px; }
+    .band-section { padding: 24px 20px; }
+    .purpose-box { padding: 24px 20px; }
+    .purpose-quote { font-size: 22px; }
+    .edit-helper-bar { width: calc(100% - 24px); justify-content: center; border-radius: 18px; flex-wrap: wrap; bottom: 12px; }
+    .edit-helper-bar span { width: 100%; text-align: center; }
+  }
+
+  /* ===== 2트랙 신청 그리드 ===== */
+  .apply-track-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .track-apply-card {
+    border-radius: 18px;
+    padding: 28px 24px;
+    text-align: center;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .track-apply-card:hover { transform: translateY(-3px); }
+  .track-apply-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    border-radius: 18px 18px 0 0;
+  }
+  .track-viet {
+    background: linear-gradient(160deg, #f0eeff, #e8f4ff);
+    border-color: #c8bfff;
+    box-shadow: 0 4px 20px rgba(108,92,231,0.1);
+  }
+  .track-viet::before { background: linear-gradient(90deg, #6C5CE7, #a29bfe); }
+  .track-russ {
+    background: linear-gradient(160deg, #fff0f5, #fff5f0);
+    border-color: #ffb3cc;
+    box-shadow: 0 4px 20px rgba(232,67,147,0.1);
+  }
+  .track-russ::before { background: linear-gradient(90deg, #E84393, #f38ec4); }
+  .track-apply-flag { font-size: 36px; margin-bottom: 10px; }
+  .track-apply-name {
+    font-size: 17px; font-weight: 900; margin-bottom: 8px;
+    letter-spacing: -0.04em;
+  }
+  .track-viet .track-apply-name { color: #3C3489; }
+  .track-russ .track-apply-name { color: #8C1255; }
+  .track-apply-desc {
+    font-size: 13px; color: #666; line-height: 1.7;
+    margin-bottom: 16px; font-weight: 500;
+  }
+  .track-slot-bar {
+    height: 5px; background: rgba(0,0,0,0.08);
+    border-radius: 3px; overflow: hidden; margin-bottom: 6px;
+  }
+  .track-slot-fill {
+    height: 100%; border-radius: 3px;
+    transition: width 0.6s cubic-bezier(.4,0,.2,1);
+  }
+  .track-viet .track-slot-fill { background: linear-gradient(90deg, #6C5CE7, #a29bfe); }
+  .track-russ .track-slot-fill { background: linear-gradient(90deg, #E84393, #f38ec4); }
+  .track-slot-txt {
+    font-size: 11px; color: #888; font-weight: 600;
+    margin-bottom: 16px; letter-spacing: 0.2px;
+  }
+  .btn-track-apply {
+    display: block; width: 100%;
+    padding: 13px 0; border-radius: 12px;
+    font-size: 14px; font-weight: 800; cursor: pointer;
+    text-decoration: none; transition: all 0.2s;
+    font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+    border: none; letter-spacing: -0.02em;
+  }
+  .btn-track-apply:hover { transform: translateY(-2px); opacity: 0.9; }
+  .btn-viet {
+    background: linear-gradient(135deg, #6C5CE7, #a29bfe);
+    color: white;
+    box-shadow: 0 4px 16px rgba(108,92,231,0.3);
+  }
+  .btn-russ {
+    background: linear-gradient(135deg, #E84393, #f38ec4);
+    color: white;
+    box-shadow: 0 4px 16px rgba(232,67,147,0.3);
+  }
+  .btn-track-apply.closed {
+    background: #e5e7eb !important;
+    color: #aaa !important;
+    box-shadow: none !important;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+
+  /* ===== 하이클래스 섹션 ===== */
+  .hiclass-section {
+    background: linear-gradient(135deg, #E8F5E9, #F1F8E9);
+    border-radius: 18px;
+    padding: 28px 32px;
+    text-align: center;
+    border: 2px solid #A5D6A7;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hiclass-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2E8B57, #52B788, #40BFA0);
+  }
+  .hiclass-logo {
+    font-size: 40px; margin-bottom: 10px;
+    display: inline-block;
+    background: white;
+    width: 60px; height: 60px;
+    border-radius: 16px;
+    line-height: 60px;
+    box-shadow: 0 4px 16px rgba(46,139,87,0.2);
+  }
+  .hiclass-title {
+    font-size: 17px; font-weight: 850;
+    color: var(--green-deep); margin-bottom: 8px;
+  }
+  .hiclass-desc {
+    font-size: 14px; color: #555;
+    line-height: 1.8; margin-bottom: 16px; font-weight: 500;
+  }
+  .hiclass-url {
+    display: inline-block;
+    background: white;
+    border: 1.5px dashed var(--green-light);
+    border-radius: 10px;
+    padding: 9px 20px;
+    font-size: 13px;
+    color: var(--green-main);
+    font-weight: 700;
+    margin-bottom: 18px;
+    word-break: break-all;
+  }
+
+  
+
+  /* ===== 단일 신청 버튼 ===== */
+  .btn-apply-single {
+    display: block;
+    width: 100%;
+    padding: 18px 0;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #2E8B57, #40BFA0);
+    color: white;
+    font-size: 18px;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    box-shadow: 0 6px 24px rgba(46,139,87,0.35);
+    transition: all 0.25s;
+  }
+  .btn-apply-single:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(46,139,87,0.45); }
+
+  @media (max-width: 640px) {
+    .apply-track-grid { grid-template-columns: 1fr; }
+    .hiclass-section { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="star" style="top:10%;left:8%;animation-delay:0s"></div>
+  <div class="star" style="top:20%;left:92%;animation-delay:0.5s"></div>
+  <div class="star" style="top:60%;left:5%;animation-delay:1s"></div>
+  <div class="star" style="top:80%;left:88%;animation-delay:1.5s"></div>
+  <div class="star" style="top:40%;left:15%;animation-delay:0.8s"></div>
+  <div class="star" style="top:15%;left:52%;animation-delay:1.2s"></div>
+  <div class="lang-float" style="top:12%;left:6%;animation-delay:0s">🇻🇳</div>
+  <div class="lang-float" style="top:28%;right:7%;animation-delay:1s">🇷🇺</div>
+  <div class="lang-float" style="top:65%;left:4%;animation-delay:2s">📚</div>
+  <div class="lang-float" style="bottom:18%;right:5%;animation-delay:0.5s">🌏</div>
+
+  <div style="position:relative;z-index:1;">
+    <div class="badge-year inline-editable" contenteditable="true" spellcheck="false">✦ 2026학년도 국립대학육성사업 ✦</div>
+    <p class="hero-subtitle inline-editable" contenteditable="true" spellcheck="false">예비교원을 위한 다문화 언어 역량 강화 프로그램</p>
+    <h1 class="hero-title inline-editable" contenteditable="true" spellcheck="false">
+      <span class="accent">이음</span><span class="accent-red">말</span><br>교실
+    </h1>
+    <p class="hero-en inline-editable" contenteditable="true" spellcheck="false"><br></p>
+    <p class="hero-desc inline-editable" contenteditable="true" spellcheck="false">
+      강의실 밖에서 언어를 만납니다.<br>
+      <strong contenteditable="true" spellcheck="false" class="inline-editable">베트남어·러시아어를 직접 체험</strong>하며<br>
+      내 교실에 올 아이들의 세계를 이해합니다.
+    </p>
+    <div class="added-band inline-editable" contenteditable="true" spellcheck="false">
+      전남 초등 다문화학생 언어 배경 1위 <strong contenteditable="true" spellcheck="false" class="inline-editable">베트남어(51.6%)</strong> · 러시아어권 학생도 증가 추세<br>
+      교사가 먼저 그 언어를 느껴야, 아이들이 보입니다.
+    </div>
+    <div class="stats-row">
+      <div class="stat-pill">
+        <span class="num inline-editable" contenteditable="true" spellcheck="false">30</span>
+        <span class="lbl inline-editable" contenteditable="true" spellcheck="false">명 선착순</span>
+      </div>
+      <div class="stat-pill">
+        <span class="num inline-editable" contenteditable="true" spellcheck="false">6</span>
+        <span class="lbl inline-editable" contenteditable="true" spellcheck="false">주간 운영</span>
+      </div>
+      <div class="stat-pill">
+        <span class="num inline-editable" contenteditable="true" spellcheck="false">🇻🇳🇷🇺</span>
+        <span class="lbl inline-editable" contenteditable="true" spellcheck="false">2개 트랙 운영</span>
+      </div>
+      <div class="stat-pill">
+        <span class="num inline-editable" contenteditable="true" spellcheck="false">⭐</span>
+        <span class="lbl inline-editable" contenteditable="true" spellcheck="false">비교과 마일리지</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wave">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1350,35 1440,30 L1440,60 L0,60 Z" fill="#1A5C38"></path>
+  </svg>
+</div>
+
+<!-- ===== 프로그램 소개 ===== -->
+<div class="section">
+  <div class="section-label inline-editable" contenteditable="true" spellcheck="false">
+    <span class="num inline-editable" contenteditable="true" spellcheck="false">+</span> 프로그램 소개
+  </div>
+  <h2 class="section-title inline-editable" contenteditable="true" spellcheck="false">🌱 이음말 교실이란?</h2>
+  <div class="purpose-box">
+    <div class="purpose-quote inline-editable" contenteditable="true" spellcheck="false">
+      언어로 <em>이어지는 교실</em>,<br>그 첫 걸음을<br>함께 시작합니다.
+    </div>
+    <div class="purpose-divider"></div>
+    <div class="purpose-text inline-editable" contenteditable="true" spellcheck="false">
+      예비교원이 베트남어 또는 러시아어를 직접 배우고, 이중언어강사와 함께 교실 상황을 시뮬레이션합니다.<br>
+      6주간의 체험이 교직 생애 전체의 감수성이 됩니다.
+    </div>
+    <div class="purpose-keywords">
+      <span class="keyword-pill inline-editable" contenteditable="true" spellcheck="false">국립대학육성사업</span>
+      <span class="keyword-pill inline-editable" contenteditable="true" spellcheck="false">베트남어 트랙</span>
+      <span class="keyword-pill inline-editable" contenteditable="true" spellcheck="false">러시아어 트랙</span>
+      <span class="keyword-pill inline-editable" contenteditable="true" spellcheck="false">언어 공감 역량</span>
+      <span class="keyword-pill inline-editable" contenteditable="true" spellcheck="false">이중언어강사 멘토링</span>
+      <span class="keyword-pill inline-editable" contenteditable="true" spellcheck="false">다문화 감수성</span>
+      
+    </div>
+  </div>
+</div>
+
+<!-- ===== 참가 대상 ===== -->
+<div class="section" style="padding-top:0;">
+  <div class="section-label inline-editable" contenteditable="true" spellcheck="false">
+    <span class="num inline-editable" contenteditable="true" spellcheck="false">1</span> 참가 대상
+  </div>
+  <h2 class="section-title inline-editable" contenteditable="true" spellcheck="false">🎓 누구나 함께할 수 있습니다</h2>
+  <div class="card-grid">
+    <div class="info-card green">
+      <span class="card-icon">👩‍🎓</span>
+      <div class="card-title inline-editable" contenteditable="true" spellcheck="false">광주교대 재학생</div>
+      <div class="card-body inline-editable" contenteditable="true" spellcheck="false">
+        다문화 교육에 관심 있는<br>
+        재학생 누구나<br>
+        <strong class="inline-editable" contenteditable="true" spellcheck="false">트랙별 선착순 모집</strong>
+      </div>
+    </div>
+
+
+  </div>
+  
+</div>
+
+
+
+
+<!-- ===== 함께하는 강사 ===== -->
+<div class="section" style="padding-top:0;">
+  <div class="section-label">
+    <span class="num">2</span> 함께하는 강사
+  </div>
+  <h2 class="section-title">🎤 이음말 교실을 이끌어갈 강사진</h2>
+  <div class="card-grid">
+    <div class="info-card red">
+      <span class="card-icon">🇻🇳</span>
+      <div class="card-title">베트남어 이중언어강사</div>
+      <div class="card-body">
+        현장 이중언어강사와 함께<br>
+        교실 협력 수업 체험<br>
+        <strong>베트남어 트랙 멘토링</strong>
+      </div>
+    </div>
+    <div class="info-card russ-blue">
+      <span class="card-icon">🇷🇺</span>
+      <div class="card-title">러시아어 이중언어강사</div>
+      <div class="card-body">
+        현장 이중언어강사와 함께<br>
+        교실 협력 수업 체험<br>
+        <strong>러시아어 트랙 멘토링</strong>
+      </div>
+    </div>
+    <div class="info-card teal">
+      <span class="card-icon">🎓</span>
+      <div class="card-title inline-editable" contenteditable="true" spellcheck="false">사업 담당자</div>
+      <div class="card-body inline-editable" contenteditable="true" spellcheck="false">
+        OT 및 클로징 진행<br>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 신청 방법 ===== -->
+<div class="section" style="padding-top:0;">
+  <div class="section-label">
+    <span class="num">3</span> 참여 신청 방법
+  </div>
+  <div class="apply-section">
+    <div class="apply-title">📋 지금 바로 신청하세요!</div>
+    <p class="apply-desc">
+      트랙을 선택하고 신청폼을 작성하면 선착순으로 접수됩니다.<br>
+      커뮤니티(하이클래스)에서 공지 및 자료를 확인하세요.
+    </p>
+
+    <div class="apply-steps">
+      <div class="apply-step">① 트랙 선택</div>
+      <span class="apply-step-arrow">→</span>
+      <div class="apply-step">② 신청폼 작성</div>
+      <span class="apply-step-arrow">→</span>
+      <div class="apply-step">③ 하이클래스 가입</div>
+      <span class="apply-step-arrow">→</span>
+      <div class="apply-step">④ 참여!</div>
+    </div>
+
+    <!-- 단일 신청 버튼 -->
+    <div style="margin-bottom:20px;">
+      <a class="btn-apply-single" href="https://gnue4466-lang.github.io/eumma1/" target="_blank">
+        📋 이음말 교실 신청하기 →
+      </a>
+      <div style="margin-top:11px;font-size:13px;color:#888;font-weight:600;text-align:center;">
+        신청서에서 트랙(베트남어 / 러시아어)을 선택해 주세요 · 선착순 마감
+      </div>
+    </div>
+
+    <!-- 하이클래스 커뮤니티 -->
+    <div class="hiclass-section">
+      <div class="hiclass-logo">🏫</div>
+      <div class="hiclass-title">이음말 교실 커뮤니티 — 하이클래스</div>
+      <div class="hiclass-desc">
+        수업 자료, 공지, 주차별 안내는 <strong style="color:var(--green-deep);">하이클래스</strong>에서 확인하세요.<br>
+        신청 완료 후 담당자 안내에 따라 개설된 클래스에 참여해 주세요.
+      </div>
+      <div class="hiclass-url" id="hiclass-url-display">
+        🔗 하이클래스 링크는 신청 완료 후 개별 안내됩니다
+      </div>
+      <div class="btn-group" style="justify-content:center;">
+        <button class="btn btn-primary" onclick="openHiclass()">🏫 하이클래스 바로가기</button>
+        <button class="btn btn-secondary" onclick="copyHiclassLink()">🔗 링크 복사</button>
+      </div>
+    </div>
+
+
+        <div class="contact-row">
+      <div class="contact-item">
+        <span class="contact-icon">✉️</span>
+        <span class="inline-editable" contenteditable="true" spellcheck="false">choisumin@gnue.ac.kr</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">📞</span>
+        <span class="inline-editable" contenteditable="true" spellcheck="false">062-520-4060</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">🏢</span>
+        <span class="inline-editable" contenteditable="true" spellcheck="false">기획처 산학·재정지원사업팀(국립대학육성사업단)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NOTICE ===== -->
+<div class="section" style="padding-top:0;">
+  <div class="notice-box">
+    <h3>언어로 이어지는 교실,<br>이음말 교실이 함께합니다</h3>
+    <p class="inline-editable" contenteditable="true" spellcheck="false">
+      본 프로그램은 국립대학육성사업의 지원을 통해 진행됩니다<br>
+      예비교원의 글로벌 교육역량 강화 및<br>
+      다문화 교육현장 실천 역량 향상을 목적으로 운영됩니다</p>
+    <div class="notice-list">
+      <span>베트남어 트랙</span>
+      <span>러시아어 트랙</span>
+      <span class="inline-editable" contenteditable="true" spellcheck="false">이중언어강사 멘토링</span>
+      
+      <span class="inline-editable" contenteditable="true" spellcheck="false">협력수업 시뮬레이션</span>
+      <span class="inline-editable" contenteditable="true" spellcheck="false">비교과 마일리지</span>
+      
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <strong>광주교육대학교</strong> 국립대학육성사업단<br>
+  GNUE CHANGE | 2026학년도 이음말 교실<br>
+  <span style="opacity:0.5;font-size:11px;">Language Bridge Classroom — 국립대학육성사업 연계 프로그램</span>
+</div>
+
+
+<script>
+/* =============================================
+   이음말 교실 홍보문 JS
+============================================= */
+
+/* ── 설정 (여기만 수정하세요) ── */
+const APPLY_URL   = 'https://gnue4466-lang.github.io/eumma1/';
+const HICLASS_URL = 'https://www.hiclass.net/mobile/invite/clazzInviteCard?classId=019dfb4c-1cd6-4a1e-b9d1-4add4090a0a6&inviteCode=41182884';   // 하이클래스 링크
+
+/* 하이클래스 */
+function initLinks() {
+  const disp = document.getElementById('hiclass-url-display');
+  if (disp && HICLASS_URL) disp.textContent = '🔗 ' + HICLASS_URL;
+}
+function openHiclass() {
+  if (HICLASS_URL) window.open(HICLASS_URL, '_blank');
+  else alert('하이클래스 링크가 아직 설정되지 않았습니다.\n담당자에게 문의하세요.');
+}
+function copyHiclassLink() {
+  if (!HICLASS_URL) { alert('하이클래스 링크가 설정되지 않았습니다.'); return; }
+  navigator.clipboard.writeText(HICLASS_URL)
+    .then(() => alert('링크가 복사되었습니다!'))
+    .catch(() => prompt('링크를 복사하세요:', HICLASS_URL));
+}
+
+/* 인라인 편집 */
+let editMode = true;
+const toggleBtn   = document.getElementById('globalEditToggleBtn');
+const downloadBtn = document.getElementById('downloadEditedHtmlBtn');
+if (toggleBtn) {
+  toggleBtn.addEventListener('click', () => {
+    editMode = !editMode;
+    document.body.classList.toggle('edit-mode-off', !editMode);
+    toggleBtn.textContent = editMode ? '편집 끄기' : '편집 켜기';
+  });
+}
+if (downloadBtn) {
+  downloadBtn.addEventListener('click', () => {
+    const html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    const blob = new Blob([html], { type: 'text/html;charset=utf-8;' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = '이음말교실_홍보문_수정본.html';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initLinks();
+});
+</script>
+
+<!-- ===== 편집바 ===== -->
+<div id="editHelperBar" class="edit-helper-bar">
+  <span>텍스트를 클릭하면 바로 수정됩니다.</span>
+  <button type="button" class="edit-helper-toggle" id="globalEditToggleBtn">편집 끄기</button>
+  <button type="button" class="edit-helper-save" id="downloadEditedHtmlBtn">수정본 저장</button>
+</div>
+
+
+</body></html>
