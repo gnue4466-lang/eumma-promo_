@@ -929,14 +929,13 @@ function copyHiclassLink() {
 
 /* 인라인 편집 */
 let editMode = false;
-const toggleBtn   = document.getElementById('globalEditToggleBtn');
-const downloadBtn = document.getElementById('downloadEditedHtmlBtn');
-const editBar     = document.getElementById('editHelperBar');
 
 function setEditMode(on) {
+  const toggleBtn = document.getElementById('globalEditToggleBtn');
+  const editBar   = document.getElementById('editHelperBar');
   editMode = on;
   document.body.classList.toggle('edit-mode-off', !editMode);
-  editBar.style.display = editMode ? 'flex' : 'none';
+  if (editBar) editBar.style.display = editMode ? 'flex' : 'none';
   document.querySelectorAll('.inline-editable').forEach(el => {
     el.contentEditable = editMode ? 'true' : 'false';
   });
@@ -955,11 +954,14 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-if (toggleBtn) {
-  toggleBtn.addEventListener('click', () => setEditMode(!editMode));
-}
-if (downloadBtn) {
-  downloadBtn.addEventListener('click', () => {
+document.addEventListener('DOMContentLoaded', () => {
+  initLinks();
+  setEditMode(false);
+
+  const toggleBtn   = document.getElementById('globalEditToggleBtn');
+  const downloadBtn = document.getElementById('downloadEditedHtmlBtn');
+  if (toggleBtn)   toggleBtn.addEventListener('click', () => setEditMode(!editMode));
+  if (downloadBtn) downloadBtn.addEventListener('click', () => {
     const html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
     const blob = new Blob([html], { type: 'text/html;charset=utf-8;' });
     const a = document.createElement('a');
@@ -968,11 +970,6 @@ if (downloadBtn) {
     a.click();
     URL.revokeObjectURL(a.href);
   });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  initLinks();
-  setEditMode(false); /* 기본: 편집 OFF */
 });
 </script>
 
