@@ -477,7 +477,7 @@
   .inline-editable:focus { outline: 2px solid #FF8C42; outline-offset: 3px; background-color: rgba(255,255,255,0.28); box-shadow: 0 0 0 4px rgba(255,140,66,0.12); }
   .edit-helper-bar {
     position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%);
-    display: flex; gap: 8px; align-items: center;
+    display: none; gap: 8px; align-items: center;
     background: rgba(26,92,56,0.96); color: #fff; border-radius: 999px;
     padding: 10px 12px 10px 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.22); z-index: 1000;
     font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
@@ -928,15 +928,35 @@ function copyHiclassLink() {
 }
 
 /* 인라인 편집 */
-let editMode = true;
+let editMode = false;
 const toggleBtn   = document.getElementById('globalEditToggleBtn');
 const downloadBtn = document.getElementById('downloadEditedHtmlBtn');
-if (toggleBtn) {
-  toggleBtn.addEventListener('click', () => {
-    editMode = !editMode;
-    document.body.classList.toggle('edit-mode-off', !editMode);
-    toggleBtn.textContent = editMode ? '편집 끄기' : '편집 켜기';
+const editBar     = document.getElementById('editHelperBar');
+
+function setEditMode(on) {
+  editMode = on;
+  document.body.classList.toggle('edit-mode-off', !editMode);
+  editBar.style.display = editMode ? 'flex' : 'none';
+  document.querySelectorAll('.inline-editable').forEach(el => {
+    el.contentEditable = editMode ? 'true' : 'false';
   });
+  if (toggleBtn) toggleBtn.textContent = editMode ? '편집 끄기' : '편집 켜기';
+}
+
+/* 비밀 단축키: Ctrl + Shift + E */
+document.addEventListener('keydown', (e) => {
+  if (e.ctrlKey && e.shiftKey && e.key === 'E') {
+    if (!editMode) {
+      const pw = prompt('관리자 비밀번호를 입력하세요');
+      if (pw === 'gnue2026') setEditMode(true);
+    } else {
+      setEditMode(false);
+    }
+  }
+});
+
+if (toggleBtn) {
+  toggleBtn.addEventListener('click', () => setEditMode(!editMode));
 }
 if (downloadBtn) {
   downloadBtn.addEventListener('click', () => {
@@ -952,6 +972,7 @@ if (downloadBtn) {
 
 document.addEventListener('DOMContentLoaded', () => {
   initLinks();
+  setEditMode(false); /* 기본: 편집 OFF */
 });
 </script>
 
